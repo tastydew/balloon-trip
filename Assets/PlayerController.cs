@@ -10,10 +10,12 @@ public class PlayerController : MonoBehaviour
     public float xMovementStrength;
     public Vector2 maxVelocity;
 
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -32,6 +34,11 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(maxVelocity.x * -1, rb.velocity.y);
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector2.up * flapStrength, ForceMode2D.Impulse);
@@ -39,11 +46,22 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.AddForce(Vector2.left * xMovementStrength, ForceMode2D.Force);
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.AddForce(Vector2.right * xMovementStrength, ForceMode2D.Force);
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
 
+    }
+
+    void OnCollisionEnter2D(Collision2D collider)
+    {
+        Debug.Log("Collided with: " + collider.gameObject.tag);
+        if (collider.gameObject.tag == "Star")
+        {
+            Destroy(gameObject);
+        }
     }
 }

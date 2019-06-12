@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Star
+  - WorldBoundary
   layers:
   - Default
   - TransparentFX
@@ -13,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Fish
+  - Player
+  - Stars
   - 
   - 
   - 
@@ -40,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Stars
+    uniqueID: 3618699919
+    locked: 0
+  - name: Player
+    uniqueID: 4148703759
+    locked: 0
+  - name: Fish
+    uniqueID: 3222514369
+    locked: 0
+  - name: Water
+    uniqueID: 2941912913
     locked: 0

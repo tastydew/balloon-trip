@@ -193,7 +193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14269534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.17, y: -6.17, z: 0}
+  m_LocalPosition: {x: 3.5019813, y: -4.5034447, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -209,7 +209,6 @@ GameObject:
   m_Component:
   - component: {fileID: 39200923}
   - component: {fileID: 39200924}
-  - component: {fileID: 39200925}
   m_Layer: 0
   m_Name: Star Destroyer
   m_TagString: Untagged
@@ -257,18 +256,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 9.772111}
   m_EdgeRadius: 0
---- !u!114 &39200925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 39200922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7991c1bd8c689b40b17dc47f903fa4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &47392560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -673,7 +660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595133048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.92, y: -2.7, z: 0}
+  m_LocalPosition: {x: -2.68, y: -2.91, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -689,7 +676,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.13409394}
