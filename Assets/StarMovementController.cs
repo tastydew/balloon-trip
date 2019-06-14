@@ -10,6 +10,7 @@ public class StarMovementController : MonoBehaviour
     Collider2D collider;
     private GameObject rightBoundary;
     private GameObject leftBoundary;
+    public float directionRandomizer;
     void Start()
     {
         collider = GetComponent<CircleCollider2D>();
@@ -19,11 +20,26 @@ public class StarMovementController : MonoBehaviour
         Physics2D.IgnoreCollision(collider, leftBoundary.GetComponent<BoxCollider2D>());
 
     }
+    void Awake()
+    {
+        float randomNum = Random.Range(0f, 1f);
 
+        if (randomNum >= 0.5f)
+        {
+            directionRandomizer = -1;
+        }
+        else
+        {
+            directionRandomizer = 1;
+        }
+        
+
+        
+    }
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y + movespeed * Time.deltaTime);
+        gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y + movespeed * directionRandomizer * Time.deltaTime);
     }
 
     void OnCollisionEnter2D(Collision2D collider)

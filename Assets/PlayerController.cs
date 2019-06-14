@@ -9,13 +9,15 @@ public class PlayerController : MonoBehaviour
     public float flapStrength;
     public float xMovementStrength;
     public Vector2 maxVelocity;
-
+    private Animator anim;
+    private AudioSource deathSound;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        anim = GetComponent<Animator>();
+        deathSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -61,7 +63,8 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Collided with: " + collider.gameObject.tag);
         if (collider.gameObject.tag == "Star")
         {
-            Destroy(gameObject);
+            anim.SetBool("isDead", true);
+            deathSound.Play();
         }
     }
 }
